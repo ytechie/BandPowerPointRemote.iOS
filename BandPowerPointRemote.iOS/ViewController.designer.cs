@@ -18,6 +18,18 @@ namespace BandPowerPointRemote.iOS
 		[GeneratedCode ("iOS Designer", "1.0")]
 		UITextField AccessCodeTextBox { get; set; }
 
+		[Outlet]
+		[GeneratedCode ("iOS Designer", "1.0")]
+		Arrow BandConnectionArrow { get; set; }
+
+		[Outlet]
+		[GeneratedCode ("iOS Designer", "1.0")]
+		UILabel bandStatusLabel { get; set; }
+
+		[Outlet]
+		[GeneratedCode ("iOS Designer", "1.0")]
+		Arrow PptConnectionArrow { get; set; }
+
 		[Action ("ConnectToServerButton_TouchUpInside:")]
 		[GeneratedCode ("iOS Designer", "1.0")]
 		partial void ConnectToServerButton_TouchUpInside (UIButton sender);
@@ -27,6 +39,18 @@ namespace BandPowerPointRemote.iOS
 			if (AccessCodeTextBox != null) {
 				AccessCodeTextBox.Dispose ();
 				AccessCodeTextBox = null;
+			}
+			if (BandConnectionArrow != null) {
+				BandConnectionArrow.Dispose ();
+				BandConnectionArrow = null;
+			}
+			if (bandStatusLabel != null) {
+				bandStatusLabel.Dispose ();
+				bandStatusLabel = null;
+			}
+			if (PptConnectionArrow != null) {
+				PptConnectionArrow.Dispose ();
+				PptConnectionArrow = null;
 			}
 		}
 	}
