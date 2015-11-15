@@ -24,7 +24,7 @@ namespace BandPowerPointRemote.iOS
 
 		partial void ConnectToServerButton_TouchUpInside (UIButton sender)
 		{
-			AccessCodeText.Text = "1234";
+			AccessCodeTextBox.Text = "5555";
 		}
 	}
 }

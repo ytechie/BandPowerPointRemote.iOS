@@ -16,11 +16,7 @@ namespace BandPowerPointRemote.iOS
 	{
 		[Outlet]
 		[GeneratedCode ("iOS Designer", "1.0")]
-		UITextField AccessCodeText { get; set; }
-
-		[Outlet]
-		[GeneratedCode ("iOS Designer", "1.0")]
-		UIButton ConnectToServerButton { get; set; }
+		UITextField AccessCodeTextBox { get; set; }
 
 		[Action ("ConnectToServerButton_TouchUpInside:")]
 		[GeneratedCode ("iOS Designer", "1.0")]
@@ -28,13 +24,9 @@ namespace BandPowerPointRemote.iOS
 
 		void ReleaseDesignerOutlets ()
 		{
-			if (AccessCodeText != null) {
-				AccessCodeText.Dispose ();
-				AccessCodeText = null;
-			}
-			if (ConnectToServerButton != null) {
-				ConnectToServerButton.Dispose ();
-				ConnectToServerButton = null;
+			if (AccessCodeTextBox != null) {
+				AccessCodeTextBox.Dispose ();
+				AccessCodeTextBox = null;
 			}
 		}
 	}
