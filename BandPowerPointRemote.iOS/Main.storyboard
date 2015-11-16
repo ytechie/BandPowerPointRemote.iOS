@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="389">
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Band PowerPoint Remote-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
@@ -40,7 +39,7 @@
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="21" placeholder="1234">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="1234" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="21">
                                         <rect key="frame" x="116" y="0.0" width="60" height="30"/>
                                         <animations/>
                                         <constraints>
@@ -77,53 +76,252 @@
                                     <constraint firstAttribute="height" secondItem="21" secondAttribute="height" id="mMb-0Q-dpV"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" minimumFontSize="10" id="143" translatesAutoresizingMaskIntoConstraints="NO" misplaced="YES">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" misplaced="YES" text="Label" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="143">
                                 <rect key="frame" x="37" y="656" width="199" height="21"/>
+                                <animations/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="199" id="146"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
-                                <constraints>
-                                    <constraint id="146" firstItem="143" firstAttribute="width" constant="199"/>
-                                </constraints>
                             </label>
-                            <view contentMode="scaleToFill" id="156" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" customClass="Arrow">
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="156" customClass="Arrow">
                                 <rect key="frame" x="130" y="82" width="40" height="30"/>
-                                <subviews/>
-                                <color key="backgroundColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <view contentMode="scaleToFill" id="280" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" customClass="Arrow">
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="280" customClass="Arrow">
                                 <rect key="frame" x="239" y="82" width="40" height="30"/>
+                                <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="297">
+                                <rect key="frame" x="153" y="251" width="83" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Help">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="447" kind="show" id="486"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="300">
+                                <rect key="frame" x="153" y="306" width="83" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Calibrate">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="308" kind="show" id="382"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="14" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="20" id="16"/>
+                            <constraint firstItem="143" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="37" id="144"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="143" secondAttribute="bottom" constant="38" id="145"/>
+                            <constraint firstAttribute="centerX" secondItem="297" secondAttribute="centerX" id="301"/>
+                            <constraint firstAttribute="centerX" secondItem="300" secondAttribute="centerX" id="302"/>
+                            <constraint firstItem="297" firstAttribute="top" secondItem="134" secondAttribute="bottom" constant="28" id="303"/>
+                            <constraint firstItem="300" firstAttribute="top" secondItem="297" secondAttribute="bottom" constant="25" id="304"/>
                             <constraint firstItem="14" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="CSc-9l-mAv"/>
                             <constraint firstItem="134" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Jbq-GK-uI2"/>
                             <constraint firstItem="14" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="dxZ-b9-ir2"/>
                             <constraint firstItem="14" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="uJ2-B3-C2U"/>
                             <constraint firstItem="134" firstAttribute="top" secondItem="14" secondAttribute="bottom" constant="15" id="xJH-1x-rcg"/>
-                            <constraint firstItem="143" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="37" id="144"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="143" secondAttribute="bottom" constant="38" id="145"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Band PowerPoint Remote" id="434">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="439"/>
+                    </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                     <connections>
                         <outlet property="AccessCodeTextBox" destination="21" id="name-outlet-21"/>
-                        <outlet property="bandStatusLabel" destination="143" id="name-outlet-143"/>
                         <outlet property="BandConnectionArrow" destination="156" id="name-outlet-156"/>
                         <outlet property="PptConnectionArrow" destination="280" id="name-outlet-280"/>
+                        <outlet property="bandStatusLabel" destination="143" id="name-outlet-143"/>
+                        <outlet property="CalibrateButton" destination="300" id="name-outlet-300"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="0.0" y="0.0"/>
         </scene>
+        <!--Calibration View Controller-->
+        <scene sceneID="307">
+            <objects>
+                <viewController id="308" customClass="CalibrationViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="305"/>
+                        <viewControllerLayoutGuide type="bottom" id="306"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="309">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <progressView opaque="NO" contentMode="scaleToFill" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="492">
+                                <rect key="frame" x="91" y="175" width="150" height="2"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="494"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="494"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="20" y="120" width="335" height="2"/>
+                                    <mask key="constraints">
+                                        <include reference="494"/>
+                                    </mask>
+                                </variation>
+                            </progressView>
+                            <progressView opaque="NO" contentMode="scaleToFill" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="520" fixedFrame="YES">
+                                <rect key="frame" x="112" y="225" width="150" height="2"/>
+                                <animations/>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="20" y="180" width="335" height="2"/>
+                                    <mask key="constraints">
+                                        <include reference="538"/>
+                                    </mask>
+                                </variation>
+                                <constraints>
+                                    <constraint id="538" firstItem="520" firstAttribute="height" constant="20"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="538"/>
+                                    </mask>
+                                </variation>
+                            </progressView>
+                            <progressView opaque="NO" contentMode="scaleToFill" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="521" fixedFrame="YES">
+                                <rect key="frame" x="89" y="318" width="150" height="2"/>
+                                <animations/>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="20" y="240" width="335" height="2"/>
+                                    <mask key="constraints">
+                                        <include reference="539"/>
+                                    </mask>
+                                </variation>
+                                <constraints>
+                                    <constraint id="539" firstItem="521" firstAttribute="height" constant="20"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="539"/>
+                                    </mask>
+                                </variation>
+                            </progressView>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="492" secondAttribute="trailing" constant="20" id="497"/>
+                            <constraint firstItem="492" firstAttribute="leading" secondItem="309" secondAttribute="leading" constant="20" id="498"/>
+                            <constraint firstItem="492" firstAttribute="top" secondItem="305" secondAttribute="bottom" constant="100" id="499"/>
+                            <constraint firstItem="520" firstAttribute="leading" secondItem="492" secondAttribute="leading" constant="0.0" id="532"/>
+                            <constraint firstItem="492" firstAttribute="trailing" secondItem="520" secondAttribute="trailing" constant="0.0" id="533"/>
+                            <constraint firstItem="521" firstAttribute="leading" secondItem="520" secondAttribute="leading" constant="0.0" id="534"/>
+                            <constraint firstItem="520" firstAttribute="trailing" secondItem="521" secondAttribute="trailing" constant="0.0" id="535"/>
+                            <constraint firstItem="520" firstAttribute="top" secondItem="492" secondAttribute="centerY" constant="50" id="536"/>
+                            <constraint firstItem="521" firstAttribute="top" secondItem="520" secondAttribute="centerY" constant="50" id="537"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="492"/>
+                                <exclude reference="520"/>
+                                <exclude reference="521"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="497"/>
+                                <exclude reference="498"/>
+                                <exclude reference="499"/>
+                                <exclude reference="532"/>
+                                <exclude reference="533"/>
+                                <exclude reference="534"/>
+                                <exclude reference="535"/>
+                                <exclude reference="536"/>
+                                <exclude reference="537"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="492"/>
+                                <include reference="520"/>
+                                <include reference="521"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="497"/>
+                                <include reference="498"/>
+                                <include reference="499"/>
+                                <include reference="532"/>
+                                <include reference="533"/>
+                                <include reference="534"/>
+                                <include reference="535"/>
+                                <include reference="536"/>
+                                <include reference="537"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="AccelXMeter" destination="492" id="name-outlet-492"/>
+                        <outlet property="CalibrationScreen" destination="309" id="name-outlet-309"/>
+                        <outlet property="AccelYMeter" destination="520" id="name-outlet-520"/>
+                        <outlet property="AccelZMeter" destination="521" id="name-outlet-521"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="310" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="750" y="32"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="388">
+            <objects>
+                <navigationController definesPresentationContext="YES" id="389" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="392">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                        <animations/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="435"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="393" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-790" y="62"/>
+        </scene>
+        <!--Help Screen View Controller-->
+        <scene sceneID="446">
+            <objects>
+                <viewController id="447" customClass="HelpScreenViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="444"/>
+                        <viewControllerLayoutGuide type="bottom" id="445"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="448">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="HelpScreen" destination="448" id="name-outlet-448"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="449" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="729" y="791"/>
+        </scene>
     </scenes>
     <resources>
         <image name="connectivity-diagram.png" width="878" height="368"/>
     </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedScreenMetrics key="destination" type="retina47"/>
+    </simulatedMetricsContainer>
 </document>

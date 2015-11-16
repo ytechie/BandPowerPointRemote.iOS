@@ -32,6 +32,7 @@ namespace BandPowerPointRemote.iOS
 
 				BandConnectionArrow.SetConnectionStatus(e.NewState);
 
+				CalibrateButton.Enabled = e.NewState == Band.ConnectionState.Connected;
 			};
 			_band.StartConnecting();
 		}

@@ -2,13 +2,14 @@
 using System.Linq;
 
 using Microsoft.Band;
+using Microsoft.Band.Sensors;
 
 namespace BandPowerPointRemote.iOS.Band
 {
 	public class Band
 	{
 		private BandClientManager manager;
-		private BandClient client;
+		private static BandClient client;
 		//private AccelerometerSensor accelerometer;
 		//private bool sensorStarted;
 
@@ -45,6 +46,16 @@ namespace BandPowerPointRemote.iOS.Band
 			{
 				e(this, new ConnectionStateChangedEventArgs(ConnectionState));
 			}
+		}
+
+		public AccelerometerSensor StartReadingAccelerometer() 
+		{
+			var accelerometer = client.SensorManager.CreateAccelerometerSensor ();
+			accelerometer.ReadingChanged += (sender, e) => {
+			};
+			accelerometer.StartReadings ();
+
+			return accelerometer;
 		}
 
 		public async void StartConnecting()

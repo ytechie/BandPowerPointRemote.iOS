@@ -98,6 +98,14 @@
     <Compile Include="Band\ConnectionStateChangedEventArgs.cs" />
     <Compile Include="Band\ConnectionState.cs" />
     <Compile Include="Arrow.cs" />
+    <Compile Include="CalibrationViewController.cs" />
+    <Compile Include="CalibrationViewController.designer.cs">
+      <DependentUpon>CalibrationViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HelpScreenViewController.cs" />
+    <Compile Include="HelpScreenViewController.designer.cs">
+      <DependentUpon>HelpScreenViewController.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
