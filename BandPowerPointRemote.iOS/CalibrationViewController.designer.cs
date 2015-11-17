@@ -30,6 +30,22 @@ namespace BandPowerPointRemote.iOS
 		[GeneratedCode ("iOS Designer", "1.0")]
 		UIView CalibrationScreen { get; set; }
 
+		[Outlet]
+		[GeneratedCode ("iOS Designer", "1.0")]
+		UILabel GestureAxisText { get; set; }
+
+		[Outlet]
+		[GeneratedCode ("iOS Designer", "1.0")]
+		UILabel GForceText { get; set; }
+
+		[Outlet]
+		[GeneratedCode ("iOS Designer", "1.0")]
+		UIButton ResetButton { get; set; }
+
+		[Action ("ResetButton_TouchUpInside:")]
+		[GeneratedCode ("iOS Designer", "1.0")]
+		partial void ResetButton_TouchUpInside (UIButton sender);
+
 		void ReleaseDesignerOutlets ()
 		{
 			if (AccelXMeter != null) {
@@ -47,6 +63,18 @@ namespace BandPowerPointRemote.iOS
 			if (CalibrationScreen != null) {
 				CalibrationScreen.Dispose ();
 				CalibrationScreen = null;
+			}
+			if (GestureAxisText != null) {
+				GestureAxisText.Dispose ();
+				GestureAxisText = null;
+			}
+			if (GForceText != null) {
+				GForceText.Dispose ();
+				GForceText = null;
+			}
+			if (ResetButton != null) {
+				ResetButton.Dispose ();
+				ResetButton = null;
 			}
 		}
 	}
