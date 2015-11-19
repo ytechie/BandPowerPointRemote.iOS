@@ -109,7 +109,9 @@
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
-    <BundleResource Include="connectivity-diagram.png" />
+    <BundleResource Include="AppImages\Band.png" />
+    <BundleResource Include="AppImages\iPhone.png" />
+    <BundleResource Include="AppImages\PowerPoint.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Band\" />
