@@ -1,7 +1,10 @@
 using Foundation;
 using System;
+using System.Linq;
 using System.CodeDom.Compiler;
 using UIKit;
+
+using Microsoft.Band.Sensors;
 
 namespace BandPowerPointRemote.iOS
 {
@@ -13,17 +16,27 @@ namespace BandPowerPointRemote.iOS
 		private double yMax;
 		private double zMax;
 
+		private CalibrationData _calibrationData;
+
+
 		public CalibrationViewController (IntPtr handle) : base (handle)
 		{
+			
 		}
 
 		public override void ViewDidLoad ()
 		{
 			base.ViewDidLoad ();
 
+			_calibrationData = SharedSettings.GetCalibrationData ();
+			UpdateUI ();
+
 			_band = new Band.Band ();
-			var acc = _band.StartReadingAccelerometer ();
+			var acc = _band.GetAccelerometer ();
+
 			acc.ReadingChanged += (sender, e) => {
+				_calibrationData.Calibrated = true;
+
 				AccelXMeter.Progress = (float)(e.SensorReading.AccelerationX / 5);
 				AccelYMeter.Progress = (float)(e.SensorReading.AccelerationY / 5);
 				AccelZMeter.Progress = (float)(e.SensorReading.AccelerationZ / 5);
@@ -35,14 +48,29 @@ namespace BandPowerPointRemote.iOS
 				if(e.SensorReading.AccelerationZ > zMax)
 					zMax = e.SensorReading.AccelerationZ;
 
-				GForceText.Text = Math.Max(xMax, Math.Max(yMax, zMax)).ToString("#.##");
-				if(xMax > Math.Max(yMax, zMax))
-					GestureAxisText.Text = "X";
-				else if(yMax > Math.Max(xMax, zMax))
-					GestureAxisText.Text = "Y";
-				else
-					GestureAxisText.Text = "Z";
+				var currMax = Enumerable.Max(new []{xMax, yMax, zMax});
+				if(_calibrationData.CalibrationValue <= currMax)
+				{
+					_calibrationData.CalibrationValue = currMax;
+
+					if(xMax > Math.Max(yMax, zMax))
+						_calibrationData.CalibrationAxis = AccelerometerAxis.X;
+					else if(yMax > Math.Max(xMax, zMax))
+						_calibrationData.CalibrationAxis = AccelerometerAxis.Y;
+					else
+						_calibrationData.CalibrationAxis = AccelerometerAxis.Z;
+
+					UpdateUI();
+				}
 			};
+
+			acc.StartReadings ();
+		}
+
+		private void UpdateUI()
+		{
+			GForceText.Text = _calibrationData.CalibrationValue.ToString("#.##");
+			GestureAxisText.Text = _calibrationData.CalibrationAxis.ToString();
 		}
 
 		partial void ResetButton_TouchUpInside (UIButton sender)
@@ -53,6 +81,17 @@ namespace BandPowerPointRemote.iOS
 
 			GForceText.Text = "";
 			GestureAxisText.Text = "";
+
+			_calibrationData.Reset();
+		}
+
+		public override void DidMoveToParentViewController (UIViewController parent)
+		{
+			base.DidMoveToParentViewController (parent);
+
+			if (parent == null) {
+				SharedSettings.SaveCalibrationData (_calibrationData);
+			}
 		}
 	}
 }

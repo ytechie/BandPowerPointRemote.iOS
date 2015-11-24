@@ -10,8 +10,7 @@ namespace BandPowerPointRemote.iOS.Band
 	{
 		private BandClientManager manager;
 		private static BandClient client;
-		//private AccelerometerSensor accelerometer;
-		//private bool sensorStarted;
+		private static AccelerometerSensor accelerometer;
 
 		public ConnectionState ConnectionState { get; private set; }
 
@@ -48,13 +47,20 @@ namespace BandPowerPointRemote.iOS.Band
 			}
 		}
 
-		public AccelerometerSensor StartReadingAccelerometer() 
+		public IBandSensorManager GetSensorManager()
 		{
-			var accelerometer = client.SensorManager.CreateAccelerometerSensor ();
-			accelerometer.ReadingChanged += (sender, e) => {
-			};
-			accelerometer.StartReadings ();
+			if (client == null) {
+				StartConnecting ();
+			}
 
+			return client.SensorManager;
+		}
+
+		public AccelerometerSensor GetAccelerometer()
+		{
+			if (accelerometer == null) {
+				accelerometer = GetSensorManager ().CreateAccelerometerSensor ();
+			}
 			return accelerometer;
 		}
 
