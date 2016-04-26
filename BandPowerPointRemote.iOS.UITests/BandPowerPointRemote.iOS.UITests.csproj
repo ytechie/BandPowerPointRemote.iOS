@@ -35,17 +35,13 @@
     <Reference Include="nunit.framework">
       <HintPath>..\packages\NUnit.2.6.4\lib\nunit.framework.dll</HintPath>
     </Reference>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\BandPowerPointRemote.iOS\BandPowerPointRemote.iOS.csproj">
-      <Project>{09FCC207-2288-4793-9CA9-C94C1654AF0C}</Project>
-      <Name>BandPowerPointRemote.iOS</Name>
-      <ReferenceOutputAssembly>False</ReferenceOutputAssembly>
-      <Private>False</Private>
-    </ProjectReference>
+    <Reference Include="Microsoft.Band">
+      <HintPath>..\packages\Microsoft.Band.1.3.10929\lib\portable-net45+win+wpa81\Microsoft.Band.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Tests.cs" />
+    <Compile Include="Calibrator.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

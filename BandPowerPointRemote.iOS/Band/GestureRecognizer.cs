@@ -9,6 +9,12 @@ namespace BandPowerPointRemote.iOS
 		private AccelerometerSensor _accelerometerSensor;
 		private CalibrationData _calibration;
 
+		private DateTime _lastHit = new DateTime();
+		private TimeSpan Debounce = TimeSpan.FromSeconds(1);
+
+		public event EventHandler MoveNext;
+		public event EventHandler MovePrev;
+
 		public GestureRecognizer (AccelerometerSensor accelerometerSensor)
 		{
 			_accelerometerSensor = accelerometerSensor;
@@ -16,6 +22,11 @@ namespace BandPowerPointRemote.iOS
 
 		private void ReadingChanged(object sender, BandSensorDataEventArgs<BandSensorAccelerometerData> e)
 		{
+			//Ignore repeated matches
+			if (DateTime.UtcNow.Subtract (_lastHit) < Debounce) {
+				return;
+			}
+
 			double accel;
 			if(_calibration.CalibrationAxis == AccelerometerAxis.X)
 				accel = e.SensorReading.AccelerationX;
@@ -25,7 +36,19 @@ namespace BandPowerPointRemote.iOS
 				accel = e.SensorReading.AccelerationZ;
 
 			if (accel > _calibration.CalibrationValue * 0.8) {
-				Console.WriteLine ("Next!!!");
+				_lastHit = DateTime.UtcNow;
+
+				var evt = MoveNext;
+				if (evt != null) {
+					evt (this, EventArgs.Empty);
+				}
+			} else if (accel < -_calibration.CalibrationValue * 0.8) {
+				_lastHit = DateTime.UtcNow;
+
+				var evt = MovePrev;
+				if (evt != null) {
+					evt (this, EventArgs.Empty);
+				}
 			}
 		}
 

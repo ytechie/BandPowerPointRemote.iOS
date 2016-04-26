@@ -24,10 +24,6 @@ namespace BandPowerPointRemote.iOS
 
 		[Outlet]
 		[GeneratedCode ("iOS Designer", "1.0")]
-		UILabel bandStatusLabel { get; set; }
-
-		[Outlet]
-		[GeneratedCode ("iOS Designer", "1.0")]
 		UIButton CalibrateButton { get; set; }
 
 		[Outlet]
@@ -47,10 +43,6 @@ namespace BandPowerPointRemote.iOS
 			if (BandConnectionArrow != null) {
 				BandConnectionArrow.Dispose ();
 				BandConnectionArrow = null;
-			}
-			if (bandStatusLabel != null) {
-				bandStatusLabel.Dispose ();
-				bandStatusLabel = null;
 			}
 			if (CalibrateButton != null) {
 				CalibrateButton.Dispose ();

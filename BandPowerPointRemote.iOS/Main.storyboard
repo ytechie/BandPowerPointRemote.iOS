@@ -19,8 +19,88 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="134">
-                                <rect key="frame" x="78" y="191" width="257" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="297">
+                                <rect key="frame" x="191" y="249" width="32" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Help">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="447" kind="show" id="486"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="300">
+                                <rect key="frame" x="176" y="304" width="62" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Calibrate">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="308" kind="show" id="382"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nIM-dU-c89" userLabel="ComDiagram">
+                                <rect key="frame" x="62" y="81" width="289" height="107"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AppImages/Band.png" translatesAutoresizingMaskIntoConstraints="NO" id="X4T-Qd-ieH">
+                                        <rect key="frame" x="0.0" y="31" width="68" height="35.5"/>
+                                        <animations/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="X4T-Qd-ieH" secondAttribute="height" multiplier="73:38" id="558"/>
+                                            <constraint firstAttribute="width" constant="68" id="dXF-J3-exn"/>
+                                        </constraints>
+                                    </imageView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="280" customClass="Arrow">
+                                        <rect key="frame" x="155" y="36.5" width="37" height="24.5"/>
+                                        <animations/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="280" secondAttribute="height" multiplier="3:2" id="tM1-Ih-9fr"/>
+                                        </constraints>
+                                    </view>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AppImages/PowerPoint.png" translatesAutoresizingMaskIntoConstraints="NO" id="rYj-Dr-1u5">
+                                        <rect key="frame" x="192" y="16" width="97" height="65.5"/>
+                                        <animations/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="rYj-Dr-1u5" secondAttribute="height" multiplier="107:72" id="YKa-Sk-vH7"/>
+                                            <constraint firstAttribute="width" constant="97" id="xgt-Ct-hLH"/>
+                                        </constraints>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AppImages/iPhone.png" translatesAutoresizingMaskIntoConstraints="NO" id="fo4-yy-QSh">
+                                        <rect key="frame" x="105" y="0.0" width="50" height="97.5"/>
+                                        <animations/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="fo4-yy-QSh" secondAttribute="height" multiplier="55:107" id="557"/>
+                                            <constraint firstAttribute="width" constant="50" id="5MM-4q-JvV"/>
+                                        </constraints>
+                                    </imageView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="156" customClass="Arrow">
+                                        <rect key="frame" x="68" y="36.5" width="37" height="24.5"/>
+                                        <animations/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="156" secondAttribute="height" multiplier="3:2" id="n0T-PO-4cD"/>
+                                            <constraint firstAttribute="width" constant="37" id="rR8-Bd-yf4"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="rYj-Dr-1u5" secondAttribute="trailing" id="571"/>
+                                    <constraint firstItem="fo4-yy-QSh" firstAttribute="centerY" secondItem="X4T-Qd-ieH" secondAttribute="centerY" id="37q-ft-JJ6"/>
+                                    <constraint firstItem="280" firstAttribute="centerY" secondItem="X4T-Qd-ieH" secondAttribute="centerY" id="9Pm-v8-SWM"/>
+                                    <constraint firstItem="rYj-Dr-1u5" firstAttribute="centerY" secondItem="X4T-Qd-ieH" secondAttribute="centerY" id="AOX-rB-U29"/>
+                                    <constraint firstItem="156" firstAttribute="centerY" secondItem="X4T-Qd-ieH" secondAttribute="centerY" id="DEf-Rg-e69"/>
+                                    <constraint firstItem="fo4-yy-QSh" firstAttribute="top" secondItem="nIM-dU-c89" secondAttribute="top" id="Iy2-gO-3Tx"/>
+                                    <constraint firstItem="280" firstAttribute="width" secondItem="156" secondAttribute="width" id="N2j-6t-yLb"/>
+                                    <constraint firstItem="156" firstAttribute="leading" secondItem="X4T-Qd-ieH" secondAttribute="trailing" id="Qaf-xn-ElH"/>
+                                    <constraint firstItem="280" firstAttribute="leading" secondItem="fo4-yy-QSh" secondAttribute="trailing" id="R7r-hC-iHj"/>
+                                    <constraint firstItem="156" firstAttribute="leading" secondItem="X4T-Qd-ieH" secondAttribute="trailing" id="Xkt-jg-dpw"/>
+                                    <constraint firstItem="fo4-yy-QSh" firstAttribute="leading" secondItem="156" secondAttribute="trailing" id="bQz-dJ-dbQ"/>
+                                    <constraint firstItem="X4T-Qd-ieH" firstAttribute="leading" secondItem="nIM-dU-c89" secondAttribute="leading" id="c4e-Ji-kU6"/>
+                                    <constraint firstItem="rYj-Dr-1u5" firstAttribute="leading" secondItem="280" secondAttribute="trailing" id="dMb-hv-fuw"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="134" userLabel="AccessCode">
+                                <rect key="frame" x="79" y="191" width="257" height="30"/>
                                 <subviews>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" ambiguous="YES" text="Access Code:" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="19">
                                         <rect key="frame" x="0.0" y="5" width="108" height="20.5"/>
@@ -70,110 +150,19 @@
                                     <constraint firstAttribute="height" secondItem="21" secondAttribute="height" id="mMb-0Q-dpV"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="143">
-                                <rect key="frame" x="37" y="715" width="199" height="20.5"/>
-                                <animations/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="199" id="146"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="297">
-                                <rect key="frame" x="191" y="249" width="32" height="30"/>
-                                <animations/>
-                                <state key="normal" title="Help">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="447" kind="show" id="486"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="300">
-                                <rect key="frame" x="176" y="304" width="62" height="30"/>
-                                <animations/>
-                                <state key="normal" title="Calibrate">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="308" kind="show" id="382"/>
-                                </connections>
-                            </button>
-                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nIM-dU-c89">
-                                <rect key="frame" x="62.5" y="64" width="289" height="107"/>
-                                <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="AppImages/Band.png" translatesAutoresizingMaskIntoConstraints="NO" id="X4T-Qd-ieH">
-                                        <rect key="frame" x="0.0" y="31" width="68" height="35.5"/>
-                                        <animations/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" secondItem="X4T-Qd-ieH" secondAttribute="height" multiplier="73:38" id="558"/>
-                                            <constraint firstAttribute="width" constant="68" id="dXF-J3-exn"/>
-                                        </constraints>
-                                    </imageView>
-                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="280" customClass="Arrow">
-                                        <rect key="frame" x="155" y="36.5" width="37" height="24.5"/>
-                                        <animations/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" secondItem="280" secondAttribute="height" multiplier="3:2" id="tM1-Ih-9fr"/>
-                                        </constraints>
-                                    </view>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="AppImages/PowerPoint.png" translatesAutoresizingMaskIntoConstraints="NO" id="rYj-Dr-1u5">
-                                        <rect key="frame" x="192" y="16" width="97" height="65.5"/>
-                                        <animations/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" secondItem="rYj-Dr-1u5" secondAttribute="height" multiplier="107:72" id="YKa-Sk-vH7"/>
-                                            <constraint firstAttribute="width" constant="97" id="xgt-Ct-hLH"/>
-                                        </constraints>
-                                    </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="AppImages/iPhone.png" translatesAutoresizingMaskIntoConstraints="NO" id="fo4-yy-QSh">
-                                        <rect key="frame" x="105" y="0.0" width="50" height="97.5"/>
-                                        <animations/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" secondItem="fo4-yy-QSh" secondAttribute="height" multiplier="55:107" id="557"/>
-                                            <constraint firstAttribute="width" constant="50" id="5MM-4q-JvV"/>
-                                        </constraints>
-                                    </imageView>
-                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="156" customClass="Arrow">
-                                        <rect key="frame" x="68" y="36.5" width="37" height="24.5"/>
-                                        <animations/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" secondItem="156" secondAttribute="height" multiplier="3:2" id="n0T-PO-4cD"/>
-                                            <constraint firstAttribute="width" constant="37" id="rR8-Bd-yf4"/>
-                                        </constraints>
-                                    </view>
-                                </subviews>
-                                <animations/>
-                                <constraints>
-                                    <constraint firstItem="fo4-yy-QSh" firstAttribute="centerY" secondItem="X4T-Qd-ieH" secondAttribute="centerY" id="37q-ft-JJ6"/>
-                                    <constraint firstItem="280" firstAttribute="centerY" secondItem="X4T-Qd-ieH" secondAttribute="centerY" id="9Pm-v8-SWM"/>
-                                    <constraint firstItem="rYj-Dr-1u5" firstAttribute="centerY" secondItem="X4T-Qd-ieH" secondAttribute="centerY" id="AOX-rB-U29"/>
-                                    <constraint firstItem="156" firstAttribute="centerY" secondItem="X4T-Qd-ieH" secondAttribute="centerY" id="DEf-Rg-e69"/>
-                                    <constraint firstItem="fo4-yy-QSh" firstAttribute="top" secondItem="nIM-dU-c89" secondAttribute="top" id="Iy2-gO-3Tx"/>
-                                    <constraint firstItem="280" firstAttribute="width" secondItem="156" secondAttribute="width" id="N2j-6t-yLb"/>
-                                    <constraint firstItem="156" firstAttribute="leading" secondItem="X4T-Qd-ieH" secondAttribute="trailing" id="Qaf-xn-ElH"/>
-                                    <constraint firstItem="280" firstAttribute="leading" secondItem="fo4-yy-QSh" secondAttribute="trailing" id="R7r-hC-iHj"/>
-                                    <constraint firstItem="156" firstAttribute="leading" secondItem="X4T-Qd-ieH" secondAttribute="trailing" id="Xkt-jg-dpw"/>
-                                    <constraint firstItem="fo4-yy-QSh" firstAttribute="leading" secondItem="156" secondAttribute="trailing" id="bQz-dJ-dbQ"/>
-                                    <constraint firstItem="X4T-Qd-ieH" firstAttribute="leading" secondItem="nIM-dU-c89" secondAttribute="leading" id="c4e-Ji-kU6"/>
-                                    <constraint firstItem="rYj-Dr-1u5" firstAttribute="leading" secondItem="280" secondAttribute="trailing" id="dMb-hv-fuw"/>
-                                    <constraint id="571" firstItem="nIM-dU-c89" firstAttribute="trailing" secondItem="rYj-Dr-1u5" secondAttribute="trailing"/>
-                                </constraints>
-                            </view>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="143" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="37" id="144"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="143" secondAttribute="bottom" id="145"/>
                             <constraint firstAttribute="centerX" secondItem="297" secondAttribute="centerX" id="301"/>
                             <constraint firstAttribute="centerX" secondItem="300" secondAttribute="centerX" id="302"/>
                             <constraint firstItem="297" firstAttribute="top" secondItem="134" secondAttribute="bottom" constant="28" id="303"/>
                             <constraint firstItem="300" firstAttribute="top" secondItem="297" secondAttribute="bottom" constant="25" id="304"/>
                             <constraint firstItem="nIM-dU-c89" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="6N5-QM-Wfb"/>
+                            <constraint firstItem="nIM-dU-c89" firstAttribute="bottom" secondItem="134" secondAttribute="top" constant="8" id="89m-m9-sWS"/>
+                            <constraint firstItem="134" firstAttribute="top" secondItem="nIM-dU-c89" secondAttribute="bottom" constant="8" id="E2v-Wi-0x6"/>
                             <constraint firstItem="134" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Jbq-GK-uI2"/>
-                            <constraint firstItem="nIM-dU-c89" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="mny-VM-kIE"/>
+                            <constraint firstItem="nIM-dU-c89" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="17" id="mny-VM-kIE"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Band PowerPoint Remote" id="434">
@@ -185,7 +174,6 @@
                         <outlet property="BandConnectionArrow" destination="156" id="name-outlet-156"/>
                         <outlet property="CalibrateButton" destination="300" id="name-outlet-300"/>
                         <outlet property="PptConnectionArrow" destination="280" id="name-outlet-280"/>
-                        <outlet property="bandStatusLabel" destination="143" id="name-outlet-143"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -270,7 +258,7 @@
                                 <animations/>
                                 <string key="text">Calibrate by waving your arm in the same direction you would use in a presentation. This motion is typically a swipe in the direction of your palm.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <progressView opaque="NO" contentMode="scaleToFill" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="492">

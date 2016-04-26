@@ -38,8 +38,6 @@ namespace BandPowerPointRemote.iOS
 
 			_band = new Band.Band();
 			_band.ConnectionStateChanged += (s, e) => {
-				bandStatusLabel.Text = e.NewState.ToString();
-
 				BandConnectionArrow.SetConnectionStatus(e.NewState);
 
 				if(e.NewState == Band.ConnectionState.Connected) {
@@ -57,8 +55,20 @@ namespace BandPowerPointRemote.iOS
 			_gestureRecognizer = new GestureRecognizer (acc);
 
 			_gestureRecognizer.Start (_calibrationData);
+			_gestureRecognizer.MoveNext += gestureRecognizer_MoveNext;
+			_gestureRecognizer.MovePrev += gestureRecognizer_MovePrev;
 
 			acc.StartReadings ();
+		}
+
+		void gestureRecognizer_MoveNext (object sender, EventArgs e)
+		{
+			Console.WriteLine ("Move Next");
+		}
+
+		void gestureRecognizer_MovePrev (object sender, EventArgs e)
+		{
+			Console.WriteLine ("Move Previous");
 		}
 
 		partial void ConnectToServerButton_TouchUpInside (UIButton sender)
